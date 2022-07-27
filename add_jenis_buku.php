@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Jenis Buku</title>
+    <title>Perpustakaan</title>
 
     <!-- Custom fonts for this template -->
     <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -42,7 +42,6 @@
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                    <a href="add_jenis_buku.php" class="btn btn-primary mt-2">Tambah Jenis Buku</a>
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <form class="form-inline">
@@ -155,40 +154,19 @@
                 <div class="container-fluid">
                     
                     <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
+                    <div class="card mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Table Buku</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Tambah Jenis Buku</h6> 
                         </div>
                         <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Label</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        include "connection.php";
-                                        $query = mysqli_query($connect, 'SELECT * FROM jenis_buku');
-                                        $results = mysqli_fetch_all($query, MYSQLI_ASSOC);
-                                        $nomor = 1;
-                                        foreach ($results as $data) {
-                                        ?>
-                                            <tr>
-                                                <td><?= $nomor++ ?></td>
-                                                <td><?= $data['label'] ?></td>
-                                <td>
-                                    <a href="edit_jenis_buku.php?id=<?= $data['id'] ?>" class="btn btn-primary">Edit</a>
-                                    <a href="delete_jenis_buku.php?id=<?= $data['id'] ?>" class="btn btn-danger">Delete</a>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                                    </tbody>
-                                </table> 
-                            </div>
+                            <form action="add_buku_insert.php" method="post">
+                                <div class="form-group">
+                                    <label>Label</label>
+                                    <input type="text" name="label" placeholder="label" class="form-control">
+                                </div>
+                                <button type="add_jenis_buku_insert.php" class="btn btn-primary">Save</button>
+                                <a href="jenis_buku.php" class="btn btn-danger">Back</a>
+                            </form>
                         </div>
                     </div>
 
