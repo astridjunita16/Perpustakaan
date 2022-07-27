@@ -159,7 +159,7 @@
                             <h6 class="m-0 font-weight-bold text-primary">Tambah Jenis Buku</h6> 
                         </div>
                         <div class="card-body">
-                            <form action="add_buku_insert.php" method="post">
+                            <form action="add_jenis_buku_insert.php" method="post">
                                 <div class="form-group">
                                     <label>Label</label>
                                     <input type="text" name="label" placeholder="label" class="form-control">
