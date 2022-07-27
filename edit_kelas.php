@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Edit Jenis Buku</title>
+    <title>Edit Kelas</title>
 
     <!-- Custom fonts for this template -->
     <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -156,23 +156,23 @@
                     <!-- DataTales Example -->
                     <div class="card mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Edit Jenis Buku</h6> 
+                            <h6 class="m-0 font-weight-bold text-primary">Edit Kelas</h6> 
                         </div>
                         <?php
-                        $id_jenis_buku = $_GET['id'];
+                        $id_kelas = $_GET['id'];
                         include 'connection.php';
-                        $query = Mysqli_query($connect, "SELECT * FROM jenis_buku WHERE id='$id_jenis_buku'");
+                        $query = Mysqli_query($connect, "SELECT * FROM kelas WHERE id='$id_kelas'");
                         $result = Mysqli_fetch_all($query, MYSQLI_ASSOC);
                         ?>
                         <div class="card-body">
-                        <form action="edit_jenis_buku_update.php" method="post" autocomplete="off">
+                        <form action="edit_kelas_update.php" method="post" autocomplete="off">
                                 <input type="hidden" name="id" value="<?php echo $result[0]['id']; ?>">
                             <div class="form-group">
-                                    <label for="label">Label</label>
-                                    <input type="text" name="label" id="label" value="<?= $result[0]['label'] ?>" class="form-control" placeholder="label">
+                                    <label for="nama_kelas">Nama Kelas</label>
+                                    <input type="text" name="nama_kelas" id="nama_kelas" value="<?= $result[0]['nama_kelas'] ?>" class="form-control" placeholder="nama_kelas">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Save</button>
-                                <a href="index.php" class="btn btn-danger">Back</a>
+                                <a href="kelas.php" class="btn btn-danger">Back</a>
                             </form>
                         </div>
                     </div>
